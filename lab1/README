@@ -1,0 +1,31 @@
+Lab 1 - COE 428
+Sheldon Cerejo 
+
+January 21th 2024
+
+The components of the lab worked properly for both of the parts. mySort.c and sortMain2. compile perfectly and 
+give a sorted result for large, small and negative numbers. It also converts the character values into integers 
+which can then be sorted into the array, data[j]. this is then passed to the mySort.c file which simply checks the 
+current and next item in the array within a for loop and if the next item is smaller than the current tone it swaps its 
+positions of values. The returned array is then the sorted one which is looped through and displayed to the user which 
+happens in sortMain2.c.
+
+
+
+1. Suppose you were given an object module (with no access to source code) that sorted an
+array of integers very efficiently. However, the sort function in the object module must
+be invoked with the following signature:
+betterSort(int data[], first, last);
+where the array to sort is data and the parameters first and last give the indices of the
+portion of the array that is to be sorted.
+How could you write a mySort() function with the signature used in this lab that could
+exploit the better sorting function in the supplied object module?
+
+An exploit to form a better sorting method would be similar to the method I used however instead of having stored as the
+temporary variable we can have two temporary variables for first and last and compare each end item in the array, having two 
+temporary variables allows for multiple variables to be stored at once which in turn would allow for more items in the array to be compared with each other
+simultaneously.
+
+I'd change my mySort so that instead of comparing d[i] and d[j] I could add d[k] and have first and last as temporary
+variables. This would greatly accelerate the sorting process with minimal code changes. This of course would mean I 
+would have to create either another nested for loop or tweak the current ones I have.

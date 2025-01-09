@@ -1,0 +1,44 @@
+
+Sheldon Cerejo
+Lab 3 coe 428
+February 27th 2024
+
+This lab required me to create two types of sorting algorithms, insertion and merge. 
+The first algorithm insertion sort seemed to work fine and was similar to the iterations I have implemented in past labs,
+The algorithm checks an array with the first and last numbers, first and last respectively and compares each element between them.
+This is done by directly comparing the current element, last = i with the next element, first = i + 1 and if one is greater than the other
+in a case where the two elements are backwards sorted, the swap is conducted by copying the last term and making first = last then
+assigning last to first. An inner loop is in place to make sure the sorting doesnt go beyond the bounds of the array.
+
+For the second algorithm, merge sort, is composed of two main parts, merge() and mySort(). mySort() is the one that conducts the sorting of the
+subarray(subproblems) in the array. It divides the original array recursively by 2 until the original case is reached where everything is divided
+into individual elements when first >= last is reached. Then it recursively sorts from the left to middle then the middle 
+to right of the array. This completes the "divide" portion of merge sort. It then calls on merge() to fulfil the "conquer."
+merge() takes "first", "mid", "last" and "array[]" it finds the length of the the subarrays, takes the elements from the original array and forms
+a temporary array and merges them together.
+
+
+Analysis
+
+Insertion Sort:
+
+	Best case would be O(n) 
+ 	- n number of comparisons 
+ 	- 0 swaps
+
+	Average Case would be O(n^2)
+	- n(n-1)/2 comparisons and swaps
+	- n-1 copies
+
+	Worst Case would be O(n^2)
+	- n(n-1)/2 comparisons and swaps
+	- n-1 copies
+
+Merge Sort:
+
+	Best case and Average case would be O(nlogn)
+	Worst case would be O(nlogn)
+	- nlogn-n+1 comparisons 
+	
+
+
